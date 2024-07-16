@@ -206,8 +206,8 @@ apr_status_t small_light_filter_imagemagick_output_data(
 
     // add dpi
     if (sz.dpi != 0) {
-        MagickSetResolution(lctx->wand, sz.dpi, sz.dpi);
         MagickSetImageUnits(lctx->wand, PixelsPerInchResolution);
+        MagickSetImageResolution(lctx->wand, sz.dpi, sz.dpi);
     }
 
     // effects.
