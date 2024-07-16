@@ -643,6 +643,6 @@ void small_light_calc_image_size(
     sz->jpeghint_flg = small_light_parse_flag(r, (char *)apr_table_get(ctx->prm, "jpeghint"));
 
 
-    sz->dpi_flg = small_light_parse_double(r, (char *)apr_table_get(ctx->prm, "dpi"));;
+    sz->dpi = small_light_parse_double(r, (char *)apr_table_get(ctx->prm, "dpi"));;
 }
 
