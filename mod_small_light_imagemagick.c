@@ -204,6 +204,12 @@ apr_status_t small_light_filter_imagemagick_output_data(
         lctx->wand = canvas_wand;
     }
 
+    // add dpi
+    if (sz.dpi != 0) {
+        MagickSetResolution(lctx->wand, sz.dpi, sz.dpi);
+        MagickSetImageUnits(lctx->wand, PixelsPerInchResolution);
+    }
+
     // effects.
     char *unsharp = (char *)apr_table_get(ctx->prm, "unsharp");
     if (unsharp) {
