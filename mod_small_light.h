@@ -91,6 +91,7 @@ typedef struct {
     int scale_flg;
     int inhexif_flg;
     int jpeghint_flg;
+    double dpi;
 } small_light_image_size_t;
 
 typedef struct {

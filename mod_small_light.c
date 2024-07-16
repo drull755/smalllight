@@ -343,6 +343,7 @@ void small_light_init_param(apr_table_t *prm)
     apr_table_set(prm, "info", "0");
     apr_table_set(prm, "inhexif", "n");
     apr_table_set(prm, "jpeghint", "n");
+    apr_table_set(prm, "dpi", "");
 }
 
 int small_light_parse_uri_param(request_rec *r, char *param_str, const char *uri_str)
@@ -640,5 +641,8 @@ void small_light_calc_image_size(
 
     // get jpeghint option.
     sz->jpeghint_flg = small_light_parse_flag(r, (char *)apr_table_get(ctx->prm, "jpeghint"));
+
+
+    sz->dpi_flg = small_light_parse_double(r, (char *)apr_table_get(ctx->prm, "dpi"));;
 }
 
